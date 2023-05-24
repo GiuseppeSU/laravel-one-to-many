@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProgettoRequest;
 use App\Http\Requests\UpdateProgettoRequest;
 use App\Models\Progetto;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 
@@ -30,7 +31,8 @@ class ProgettoController extends Controller
      */
     public function create()
     {
-        return view('admin.progetti.create');
+        $types = Type::all();
+        return view('admin.progetti.create', compact('types'));
     }
 
     /**

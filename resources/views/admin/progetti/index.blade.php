@@ -3,6 +3,7 @@
 
 
 @section('content')
+    <a href="{{ route('admin.progetti.create') }}" class="btn btn-primary">Crea nuovo post</a>
     <table class="table">
         <thead>
             <tr>
