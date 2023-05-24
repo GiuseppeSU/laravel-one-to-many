@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProgettoController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,11 @@ Route::middleware(['auth', 'verified'])
             'progetti' => 'progetto:slug'
 
         ]);
+
+        Route::resource('types', TypeController::class)->parameters([
+            'types' => 'type:slug'
+
+        ])->only(['index']);
 
     });
 Route::middleware('auth')->group(function () {

@@ -56,7 +56,7 @@ class ProgettoController extends Controller
 
         $newProgetto = Progetto::create($validated_data);
 
-        return redirect()->route('admin.progetti.show', ['progettos' => $newProgetto->slug])->with('status', 'Post creato con successo!');
+        return redirect()->route('admin.progetti.show', ['progetto' => $newProgetto->slug])->with('status', 'Post creato con successo!');
     }
 
     /**
